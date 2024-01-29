@@ -221,7 +221,7 @@ public class AssignmentTwo {
             }
         }
         System.out.println("Highest Performing Student: " + highestPerformingStudent.getName() +
-                ", Percentage: " + highestPercentage + "%");
+                ", Percentage: " + highestPercentage + "%\n");
     }
 
     // create a method to Find the second-highest student
@@ -327,7 +327,10 @@ public class AssignmentTwo {
 
 
     // Get all the students' results and their scores on all the individual assignments and questions.
-
+    public static void getResultAndScoreOfIndiv(List<Student>s,ResultsData resultsData)
+    {
+        
+    }    
 
     public static List<Question> createDummyQuestions(List<TechStack>techstacks,List<Assignment>assignments){
         List<Question>questions=new ArrayList<>();
@@ -417,6 +420,9 @@ public class AssignmentTwo {
         ScoreLessThan60(students, resultsData);
         
         getResultOfStudent("Rohan", students, resultsData);
+
+        // getAssignmmentAndQuestion();
+
         System.out.println("Hello World!!");
 
         
