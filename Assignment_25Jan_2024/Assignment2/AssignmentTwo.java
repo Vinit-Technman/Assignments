@@ -328,8 +328,24 @@ public class AssignmentTwo {
 
     // Get all the students' results and their scores on all the individual assignments and questions.
     public static void getResultAndScoreOfIndiv(List<Student>s,ResultsData resultsData)
-    {
-        
+    {   
+        System.out.println("Student's Results and their scores on All Individual Assignments");
+       for(Student stu:s)
+        {
+                List<Result>results=resultsData.getResultsByStudent(stu);
+                System.out.println("Student Name: "+stu.getName());
+                for(Result res:results)
+                {
+                    int QueScore=res.getTotalScore()/4;
+                    System.out.println("Assignment: "+res.getAssignment().getId()+" No. of Question in Assignment: "+res.getAssignment().getQuestions().size()+"  Total Score on Assignments: "+res.getTotalScore()
+                    +" Score in question 1: "+QueScore
+                    +" Score in question 2: "+QueScore
+                    +" Score in question 3: "+QueScore
+                    +" Score in question 4: "+QueScore
+                    +" \n");
+                }
+        }
+
     }    
 
     public static List<Question> createDummyQuestions(List<TechStack>techstacks,List<Assignment>assignments){
@@ -421,7 +437,7 @@ public class AssignmentTwo {
         
         getResultOfStudent("Rohan", students, resultsData);
 
-        // getAssignmmentAndQuestion();
+        getResultAndScoreOfIndiv(students,resultsData);
 
         System.out.println("Hello World!!");
 
